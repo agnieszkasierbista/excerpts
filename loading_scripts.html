@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>loading-scripts</title>
+    <link rel="stylesheet" href="http://localhost:3000/public/stylesheet.css" />
 </head>
 <body>
 <script defer src="/scripts/c.js"></script>
 <script defer src="/scripts/a.js"></script>
 <script src="/scripts/b.js"></script>
-<p>Hello!</p>
+<p id="okejka">Hello!</p>
+<script>
+    debugger;
+</script>
 <img alt="dolphin" src="img.png" id="img"/>
 <script>
     document.getElementById('img').addEventListener('load', function () {

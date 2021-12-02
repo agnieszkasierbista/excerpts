@@ -7,6 +7,7 @@ class Animal {
         console.log("run!1");
     }
 
+    // @ts-ignore
     run = () => { //metoda instancji
         console.log("run!2");
     }

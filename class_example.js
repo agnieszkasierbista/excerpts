@@ -1,5 +1,5 @@
 class Dog {
-    constructor(name) { this.name = name; }
+    constructor(name) { this.name = name; } // this w konstruktorze odnosi sie do instancji
     bark() { console.log('hau!', this.name); }
     static run() { console.log('run!', this); }
 }
@@ -28,7 +28,7 @@ Enemy.prototype = {
 
 Enemy.hide = function hide() {
     console.log('hide!', this);
-} // definiujemy metode statycznś (znajdującą sie bezpośrednio na klasie)
+} // definiujemy metode statyczną (znajdującą sie bezpośrednio na klasie)
 
 Enemy.hide();
 
