@@ -21,7 +21,7 @@ app.get('/public/szoking.css', (req, res) => {
     setTimeout(() => {
         res.header('Content-Type', 'text/css');
         res.send(fs.readFileSync(__dirname + "/public/szoking.css"))
-    }, 5000);
+    }, 25000);
 });
 
 app.get('/public/img.png', (req, res) => {
@@ -32,6 +32,15 @@ app.get('/public/img.png', (req, res) => {
     }, 10000);
 });
 
+['a', 'b'].forEach((name) => {
+    app.get(`/public/${name}.js`, (req, res) => {
+
+        setTimeout(() => {
+            res.header('Content-Type', 'application/javascript');
+            res.send(fs.readFileSync(__dirname + `/public/${name}.js`))
+        }, name === 'a' ? 5000 : 20000);
+    });
+});
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
