@@ -1,5 +1,5 @@
 class Animal {
-    attack = () => { //metoda instancji
+    attack = () => { //metoda instancji - class field
         this.run();
     }
 
@@ -28,8 +28,8 @@ const animal = new Animal();
 
 class A {
 
-    private age = 20;
-    public name = 'sdfsdf;';
+    private age = 20; // class field
+    public name = 'sdfsdf;'; // class field
 
 
     private greet() {
@@ -94,3 +94,72 @@ function szokio(a: Shape) {
 
 szokio(new Rectangle());
 szokio(new Triangle());
+
+class Aa {
+    a: number
+    greet() { console.log('a'); }
+}
+
+class Bb extends Aa {
+    b: string
+    greet() { console.log('b'); }
+}
+
+class Cc extends Aa {
+    c: boolean
+    greet() { console.log('c'); }
+}
+
+function x(z: Aa): number {
+    z.greet();
+
+    return z.a;
+}
+
+const aa = new Aa();
+const bb = new Bb();
+const cc = new Cc();
+
+x(aa);
+x(bb);
+x(cc);
+
+
+// agregacja:
+
+class Szok {
+    draw(x: number) {
+
+    }
+}
+
+class Heh {
+    lol: null | Szok = null;
+
+    constructor(lol: Szok) {
+        this.lol = lol;
+    }
+
+    draw(z: number) {
+        this.lol.draw(z);
+    }
+}
+
+new Heh(new Szok());
+
+// kompozycja:
+
+class Yo {
+    draw(z: number) {
+
+    }
+}
+
+class Platki {
+    bigYo = Yo;
+    yo = new Yo();
+
+    draw(z: number) {
+        this.yo.draw(z);
+    }
+}
