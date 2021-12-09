@@ -2,9 +2,10 @@ const express = require('express')
 const app = express()
 const port = 3000
 const fs = require('fs');
+const cookieParser = require('cookie-parser')
 
 // app.use(express.static('public'))
-
+app.use(cookieParser())
 // [1, 2, 3, 4, 5, 6, 7, 8].forEach((num) => {
 //     app.get(`/public/stylesheet${num}.css`, (req, res) => {
 //
@@ -18,10 +19,12 @@ const fs = require('fs');
 // })
 
 app.get('/public/szoking.css', (req, res) => {
+    console.log(req.cookies, "cookies");
     setTimeout(() => {
         res.header('Content-Type', 'text/css');
+        res.header('Set-Cookie', 'abc=123; Path=/'); // set cookie, in value goes every info such as path, name and any other cookie value
         res.send(fs.readFileSync(__dirname + "/public/szoking.css"))
-    }, 25000);
+    }, 5000);
 });
 
 app.get('/public/img.png', (req, res) => {
