@@ -7,6 +7,7 @@ function Wrapper() {
 
     return (
         <div>
+            {szok}
             {shouldDisplay && <Lol xyz={szok}/>}
             <button onClick={() => setSzok((prev) => prev + 1)}>set szok</button>
             <button onClick={() => setShouldDisplay((prev) => !prev)}>toggle</button>
@@ -15,6 +16,7 @@ function Wrapper() {
 }
 
 function Lol({xyz}: any) {
+    const [lol, setLol] = React.useState(10);
 
     React.useEffect(() => {
         console.log(xyz);
@@ -30,9 +32,15 @@ function Lol({xyz}: any) {
         }
     }, [xyz]);
 
+
     return (
-        <div id="hehe">szok</div>
+        <div id="hehe">szok
+            {lol}
+            <button onMouseEnter={() => setLol((prev) => prev +1)}>Add</button>
+        </div>
     )
+
+
 }
 
 ReactDOM.render(
