@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flex</title>
+
+    <style>
+        .container {
+            width: 60px;
+            height: 100px;
+            outline: 2px solid green;
+            display: flex;
+
+        }
+
+        .containee {
+            height: 100%;
+            flex-basis: 50px;
+        }
+
+        .a {
+            outline: 3px solid red;
+            flex-grow: 1;
+            width: 80px;
+        }
+
+        .b {
+            outline: 3px solid dodgerblue;
+            flex-shrink: 2;
+            flex-basis: 40px;
+        }
+
+        .c {
+            outline: 3px solid yellowgreen;
+            flex-grow: 1;
+        }
+
+        .shrinker {
+            width: 100px;
+            height: 100px;
+            outline: 3px solid magenta;
+            display: flex;
+
+
+        }
+
+        .shrinkee {
+            outline: 3px solid black;
+            width: 200px;
+            height: 100%;
+            flex-shrink: 0;
+        }
+
+        .x {
+            flex-shrink: 1;
+        }
+
+        .y {
+            flex-shrink: 2;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="container">
+    <div class="containee a"></div>
+    <div class="containee b"></div>
+    <div class="containee c"></div>
+</div>
+
+<div class="shrinker">
+    <div class="shrinkee x"></div>
+    <div class="shrinkee y"></div>
+</div>
+
+</body>
+</html>
