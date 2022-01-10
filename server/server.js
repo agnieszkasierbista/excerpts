@@ -45,6 +45,14 @@ app.get('/public/img.png', (req, res) => {
     });
 });
 
-app.listen(port, () => {
+
+app.get("/public/abc", (req,res) => {
+    res.send("abc");
+})
+
+
+app.listen(port, '0.0.0.0', () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })
+
+// 192.168.8.107

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>No-cors</title>
+
+</head>
+<body>
+<button id="click">REQUEST</button>
+<script>
+    document.getElementById("click").addEventListener('click', function sendRequest() {
+        fetch("http://192.168.8.106:3000/abc", { mode: 'no-cors' }).then((resp) => {
+            console.log(resp.body)
+            resp.json().then((lol) => console.log(lol));
+        }).catch((r) => {
+            console.log(r)
+        })
+    })
+
+</script>
+</body>
+</html>
