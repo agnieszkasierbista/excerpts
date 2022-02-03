@@ -38,3 +38,36 @@ var B = /** @class */ (function (_super) {
 }(A));
 A.cde();
 B.cde();
+var Axios = /** @class */ (function () {
+    function Axios() {
+        this.gowno = 123;
+    }
+    Axios.prototype.makeRequest = function () {
+        // @ts-ignore
+        return Promise.resolve(1);
+    };
+    Axios.prototype.validate = function () { };
+    return Axios;
+}());
+var SuperNowyKlient = /** @class */ (function () {
+    function SuperNowyKlient() {
+    }
+    SuperNowyKlient.prototype.makeRequest = function () {
+        // robi w chuj zajebiste rzeczy
+        // @ts-ignore
+        return Promise.resolve(100);
+    };
+    SuperNowyKlient.prototype.die = function () { };
+    return SuperNowyKlient;
+}());
+var Auth = /** @class */ (function () {
+    function Auth() {
+    }
+    Auth.prototype.authorize = function (httpClient) {
+        httpClient.makeRequest().then(function (resp) {
+            console.log('resp', resp);
+        });
+    };
+    return Auth;
+}());
+new Auth().authorize(new Axios());

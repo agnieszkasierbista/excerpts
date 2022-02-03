@@ -19,3 +19,45 @@ class B extends A {
 
 A.cde();
 B.cde();
+
+
+
+//Dependency Inversion:
+
+interface CommonShit {
+    makeRequest(): Promise<number>
+}
+
+class Axios implements CommonShit {
+    makeRequest(): Promise<number> {
+        // @ts-ignore
+        return Promise.resolve(1);
+    }
+
+    validate() {}
+
+    gowno = 123
+}
+
+class SuperNowyKlient implements CommonShit{
+    makeRequest(): Promise<number> {
+        // robi w chuj zajebiste rzeczy
+        // @ts-ignore
+        return Promise.resolve(100);
+    }
+
+    die() {}
+}
+
+
+
+class Auth {
+    authorize(httpClient: CommonShit) {
+        httpClient.makeRequest().then((resp) => {
+            console.log('resp', resp);
+        })
+    }
+}
+
+
+new Auth().authorize(new Axios())
