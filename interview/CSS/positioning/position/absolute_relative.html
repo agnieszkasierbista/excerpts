@@ -6,6 +6,12 @@
             margin: 0;
         }
 
+        body {
+            margin: 40px;
+            padding: 40px;
+            background: lightblue;
+        }
+
         .parent {
             position: relative;
             width: 100px;
@@ -26,6 +32,16 @@
 
             bottom: 20px;
         }
+
+        .hand {
+            position: absolute;
+            padding: 50px;
+            background: magenta;
+            display: inline-block;
+
+            top: 20px;
+            left: 20px;
+        }
     </style>
     <title>szok</title>
 </head>
@@ -33,5 +49,6 @@
 <div class="parent">
     <div class="child"></div>
 </div>
+<div class="hand"></div>
 </body>
 </html>
