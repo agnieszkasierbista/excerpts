@@ -38,6 +38,13 @@ var B = /** @class */ (function (_super) {
 }(A));
 A.cde();
 B.cde();
+var Asd = /** @class */ (function () {
+    function Asd(a, b) {
+        this.cat = a;
+        this.dog = b;
+    }
+    return Asd;
+}());
 var Axios = /** @class */ (function () {
     function Axios() {
         this.gowno = 123;

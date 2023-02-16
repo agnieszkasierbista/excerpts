@@ -22,6 +22,38 @@ B.cde();
 
 
 
+
+class Asd {
+    private cat: any;
+    dog: any;
+    constructor(a, b) {
+        this.cat = a;
+        this.dog = b;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Dependency Inversion:
 
 interface CommonShit {

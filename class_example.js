@@ -39,12 +39,23 @@
 // enemy.attack();
 
 class A {
+    constructor(abc) {
+        console.log("construct~!")
+    }
     greet() {
         console.log('hi!');
     }
 }
 
 class B extends A { //dziedziczenie
+    constructor() {
+        super(123);
+        console.log("B")
+    }
+    greet() {
+        super.greet();
+        console.log('hello!');
+    }
     run() {
         console.log('run');
     }
@@ -56,4 +67,44 @@ const b = new B();
 a.greet();
 b.greet()
 b.run();
+
+
+class Cat {
+    constructor(paws, whiskers) {
+        this.paws = paws;
+        this.whiskers = whiskers;
+    }
+
+    jump = function meow() { //instance
+        console.log('meow!')
+    }
+
+    jump() { //prototype
+
+    }
+
+    static sleep() {
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
